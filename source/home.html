@@ -1,6 +1,15 @@
 {% paginate products from products.current by theme.products_per_page %}
 
   {% if products != blank %}
+  <div class="slide-outer">
+    <div class="slide-inner">
+       <div id="slides">
+          <img src="/images/banner/banner1.jpg" alt="">
+          <img src="/images/banner/banner1.jpg" alt="">
+          <img src="/images/banner/banner1.jpg" alt="">
+       </div>
+    </div>
+  </div>
   <div class="row">
     <ul class="unstyled products">
       {% for product in products %}

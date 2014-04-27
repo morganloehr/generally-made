@@ -16,6 +16,7 @@ $body-bg: #fff !default;
 $red: #ef575a;
 $blue: #384065;
 $gray:#9e9ea1;
+$lt-gray: #f1f1f1;
 $black:       #202020; // headings
 $slate:       #252525; // text
 
@@ -23,6 +24,8 @@ $slate:       #252525; // text
 $error_red:     #CA322F;
 $success_green: #354609;
 
+
+$border : 1px solid $lt-gray;
 
 /*******************************************************************
  * Functions

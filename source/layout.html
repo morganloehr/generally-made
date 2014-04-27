@@ -17,19 +17,33 @@
   </head>
 
   <body id="{{ page.permalink }}" class="{{ page.category }}">
+   <div class="wrap">
     <header>
+      <ul class="topTools">
+        <li class="cart"><a href="/cart">Cart ({{ cart.total | money_with_sign }})</a></li>
+      </ul>
+      <div class="logoWrap">
+        <a href=""><img src="/images/logo.png" alt=""></a>
+      </div>
+      <ul class="nav">
+        <li><a href="">Abouts</a></li>
+        <li><a href="">Arts</a></li>
+        <li><a href="">Prints</a></li>
+        <li><a href="">Threads</a></li>
+        <li><a href="">Contacts</a></li>
+      </ul>
       <a href="/" title="{{ store.name | escape }}">
         {% if theme.logo != blank %}
         <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
         {% else %}
         <!-- {{ store.name }} -->
-        <img src="/images/banner.jpg">
+        <!-- <img src="/images/banner.jpg"> -->
         {% endif %}
       </a>
 
     </header>
 
-    <div class="wrap">
+    
      <!--  <aside>
         <section>
           <a href="/cart">Cart ({{ cart.total | money_with_sign }})</a>
@@ -94,12 +108,13 @@
           {{ page_content }}
         {% endif %}
       </section>
-    </div>
+    
 
-    <footer>
-      {% if theme.twitter_username != blank %}
-      <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
-      {% endif %}
-    </footer>
+      <footer>
+        {% if theme.twitter_username != blank %}
+        <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
+        {% endif %}
+      </footer>
+    </div> <!-- WRAP -->
   </body>
 </html>

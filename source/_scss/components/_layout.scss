@@ -27,6 +27,59 @@ body {
 
 %clearfix { @include clearfix; }
 
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.wrap {
+	max-width:940px;
+	margin:0 auto;
+	width:90%;
+}
+
+
+ul.topTools {
+
+	border-bottom:$border;
+	padding:1.5em 0;
+
+	li.cart {
+		text-align:right;
+	}
+}
+
+.logoWrap {
+	padding:2em 0;
+	text-align:center;
+
+	img {
+		vertical-align: middle;
+	}
+}
+
+ul.nav 	{
+	text-align:center;
+	border-top:$border;
+	border-bottom:$border;
+	padding:1em 0;
+	
+	li {
+		display:inline;
+		text-transform: uppercase;
+	}
+
+	a {
+		display:inline-block;
+		padding:1em 1.5em;
+	}
+}
+
+/* ==========================================================================
+   Products
+   ========================================================================== */
+
+
 @media #{$small-up}{
 
 	ul.products {
@@ -38,6 +91,7 @@ body {
 
 	}
 }
+
 
 
 

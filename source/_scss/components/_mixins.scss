@@ -1,0 +1,32 @@
+//
+// Functions
+//
+
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+
+//
+// Layout Mixins
+//
+
+// Aligns elements via text-align: justify
+// See https://gist.github.com/curtishenson/6372554 for stripped down example
+@mixin align-justify($child: li, $width: 50%) {
+
+  text-align: justify; font-size: 0.1px;
+
+  &:after     { content: ''; @include inline-block; width: 100%; }
+  > #{$child} { @include inline-block; text-align: left; width: $width; font-size: $base-font-size; vertical-align: top; /*font-size: em-calc(15,0.1px); this breaks in IE */ }
+}

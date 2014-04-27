@@ -1,0 +1,120 @@
+/*******************************************************************
+ * Type Defaults
+ *******************************************************************/
+
+// Use these to include the font into classes
+//%fontname        { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+//@mixin fontname  { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+// Font aintaliasing. Includes webkit and firefox version to be included in a future version */
+%fontsmoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.merri {font-family:'Merriweather', serif;}
+
+html,
+body { font-size: $base-font-size; }
+
+// Default body styles
+body {
+  @extend .merri;
+  color: #444;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+}
+
+// i tag is used to denote icons, em for italics
+i { @extend %fontsmoothing; font-style: normal; }
+
+// Override outline from normalize, we don't like it
+a {
+  @include transition (color 0.2s cubic-bezier(.21, 0, .36, 1), background-color 0.2s cubic-bezier(.21, 0, .36, 1));
+  color: $blue;
+  text-decoration:none;
+}
+a:hover { color: lighten($blue, 10%); }
+a:focus { outline: none; }
+
+.price {
+  color:$gray;
+}
+
+/*******************************************************************
+ * Headers
+ *******************************************************************/
+
+$h1-font-size: em-calc(30) !default;
+$h2-font-size: em-calc(24) !default;
+$h3-font-size: em-calc(18) !default;
+$h4-font-size: em-calc(16) !default;
+$h5-font-size: em-calc(16) !default;
+$h6-font-size: 1em !default;
+
+/* Default header styles */
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1.4;
+  margin: 0 0 .5em;
+}
+
+h1 { font-size: $h1-font-size; }
+h2 { font-size: $h2-font-size; }
+h3 { font-size: $h3-font-size; }
+h4 { font-size: $h4-font-size; color: $black; }
+h5 { font-size: $h5-font-size; color: $black; }
+h6 { font-size: $h6-font-size; color: $black; }
+
+h3 + h3 { margin-top: 1.2em; }
+h4 + h4 { margin-top: 1.5em; }
+
+
+/*******************************************************************
+ * Paragraphs
+ *******************************************************************/
+
+p {
+  line-height: 1.6;
+  margin: 0 0 em-calc(20);
+  text-rendering: optimizeLegibility;
+}
+
+/*******************************************************************
+ * Lists
+ *******************************************************************/
+
+// Unstyle lists. Extend class and mixin. Use mixin inside media queries if necessary.
+%unstyle-list       { list-style: none; margin: 0; padding: 0; }
+@mixin unstyle-list { list-style: none; margin: 0; padding: 0; }
+
+ul, ol {
+  line-height:1.5; padding-left: 1em; list-style:none; text-align:center;
+}
+
+
+/*******************************************************************
+ * Blockquotes
+ *******************************************************************/
+
+blockquote {
+  line-height: 1.7; border-left: 2px solid #000; margin: 0 0 1.5em; padding: 1em; quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: shade(#000,10%); content: open-quote; font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.05em;
+  vertical-align: -0.4em;
+}
+blockquote p { display: inline; }
+
+
+/*******************************************************************
+ * Misc Global Styles
+ *******************************************************************/
+
+hr          { height: 1px; color: #ccc; background: #ccc; font-size: 0; border: 0; }
+article hr  { margin: 15px 0; }

@@ -1,0 +1,44 @@
+//
+// Layout Defaults
+//
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+// Grid Defaults to get images and embeds to work properly
+img,
+object,
+embed { max-width: 100%; height: auto; }
+
+object,
+embed { height: 100%; }
+img { -ms-interpolation-mode: bicubic; }
+
+// Get rid of gap under images by making them display: inline-block; by default
+img { display: inline-block; }
+
+body {
+  padding: 0; margin: 0;
+}
+
+%clearfix { @include clearfix; }
+
+@media #{$small-up}{
+
+	ul.products {
+
+		li{
+			vertical-align:top;
+			margin:2%;
+		}
+
+	}
+}
+
+
+
+

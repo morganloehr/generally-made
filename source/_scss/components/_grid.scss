@@ -90,7 +90,7 @@ $opposite-direction: right;
   $float:true) {
 
   position: relative;
-  display:inline-block;
+  display:inline-block; 
 
   // If collapsed, get rid of gutter padding
   @if $collapse {

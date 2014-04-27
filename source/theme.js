@@ -17,3 +17,8 @@
 //
 //= require javascripts/product
 //= require javascripts/cart
+//= require javascripts/slider
+//= require javascripts/main
+
+
+
